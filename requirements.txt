@@ -1,0 +1,13 @@
+# producer.py runs on the host, install this locally:
+kafka-python==2.0.2
+
+# stream_ingest.py runs *inside* the `spark` container (bitnamilegacy/spark:3.5.6),
+# which already ships pyspark. You only need this if you want to also run/lint
+# stream_ingest.py locally on the host:
+# pyspark==3.5.6
+
+# Week 2: stream_ingest.py is spark-submit'd inside the container with these
+# extra Maven packages (see README "Run steps" — not installed via pip):
+#   io.delta:delta-spark_2.12:3.3.3
+#   org.apache.hadoop:hadoop-aws:3.3.4
+# (org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.6 from Week 1 is still required too)
