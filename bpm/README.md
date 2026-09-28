@@ -155,6 +155,17 @@ GROUP BY last_activity
 ORDER BY cases_in_stage DESC;
 ```
 
+## Submittable report
+
+[`BPM_Case_Study_Report.pdf`](BPM_Case_Study_Report.pdf) is a full write-up of everything below — business
+context, BPMN diagram, event taxonomy, KPI definitions, the anomaly-detection rules and a verified live-run
+result set (injected vs. detected anomaly counts, SLA-breach and out-of-sequence detail, bottleneck analysis),
+the spark-sql/Trino querying section, and the full source of both `bpm_producer.py` and
+`bpm_process_engine.py` as appendices. It's built with `bpm/report/build_report.py` (reportlab) and
+`bpm/report/draw_bpmn.py` (matplotlib, generates the BPMN diagram); rerun both to regenerate the PDF after
+any changes, e.g. once Trino is added and the pending queries in section 7.2 can be verified live too
+(`pip install reportlab matplotlib`, then `python bpm/report/draw_bpmn.py && python bpm/report/build_report.py`).
+
 ## Rubric mapping (40 marks)
 
 | Component | Marks | Where to point the grader |
